@@ -1,0 +1,264 @@
+:root {
+	--lm-green: #78be20;
+	--lm-dark: #333333;
+	--lm-light: #f5f5f5;
+	--card-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+	--border-radius: 24px;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+	background: var(--lm-light);
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 16px;
+}
+
+.app {
+	max-width: 400px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin-bottom: 16px;
+	padding: 0 8px;
+}
+
+.logo {
+	height: 32px;
+	width: auto;
+}
+
+.header h1 {
+	color: var(--lm-dark);
+	font-size: 1.5rem;
+	font-weight: 500;
+}
+
+.dashboard-card {
+	background: white;
+	border-radius: var(--border-radius);
+	padding: 24px 20px;
+	box-shadow: var(--card-shadow);
+	border: 1px solid rgba(0, 0, 0, 0.05);
+	transition: box-shadow 0.2s ease;
+}
+
+.dashboard-card:hover {
+	box-shadow: 0 0 0 2px var(--lm-green), var(--card-shadow);
+}
+
+.profile-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.profile-name {
+	font-size: 1.3rem;
+	font-weight: 600;
+	color: var(--lm-dark);
+	display: block;
+}
+
+.profile-role {
+	font-size: 0.9rem;
+	color: #666;
+}
+
+.avatar {
+	width: 48px;
+	height: 48px;
+	background: var(--lm-green);
+	color: white;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: bold;
+	font-size: 1.2rem;
+}
+
+.stats-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 12px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.stat-item {
+	background: var(--lm-light);
+	padding: 12px 4px;
+	border-radius: 16px;
+}
+
+.stat-label {
+	font-size: 0.7rem;
+	text-transform: uppercase;
+	color: #666;
+	display: block;
+	margin-bottom: 4px;
+}
+
+.stat-value {
+	font-size: 1.2rem;
+	font-weight: 700;
+	color: var(--lm-dark);
+}
+
+.stat-value.highlight {
+	color: var(--lm-green);
+}
+
+.controls-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.objective-badge {
+	background: var(--lm-dark);
+	color: white;
+	padding: 8px 16px;
+	border-radius: 100px;
+	font-size: 0.9rem;
+}
+
+.period-select {
+	padding: 8px 16px;
+	border-radius: 100px;
+	border: 1px solid #ddd;
+	background: white;
+	font-size: 0.9rem;
+}
+
+.chart-container {
+	margin-bottom: 20px;
+}
+
+.week-grid {
+	display: flex;
+	justify-content: space-between;
+	gap: 8px;
+}
+
+.day {
+	flex: 1;
+	background: var(--lm-light);
+	padding: 10px 4px;
+	border-radius: 12px;
+	text-align: center;
+	font-size: 0.8rem;
+	font-weight: 500;
+}
+
+/* Mobile first, déjà responsive */
+@media (max-width: 360px) {
+	.stats-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.week-grid {
+		flex-wrap: wrap;
+	}
+}
+
+.chart-container {
+	margin-bottom: 20px;
+	height: 250px;
+	width: 100%;
+	position: relative;
+}
+
+canvas {
+	width: 100% !important;
+	height: 100% !important;
+}
+
+/* Upload card */
+.upload-card {
+	background: white;
+	border-radius: var(--border-radius);
+	padding: 32px 20px;
+	box-shadow: var(--card-shadow);
+	border: 2px dashed #ddd;
+	text-align: center;
+}
+
+.upload-area {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 16px;
+}
+
+.upload-icon {
+	font-size: 3rem;
+}
+
+.upload-hint {
+	color: #666;
+	font-size: 0.9rem;
+}
+
+#pasteInput {
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #ddd;
+	border-radius: 12px;
+	font-family: monospace;
+	resize: vertical;
+	margin: 8px 0;
+}
+
+.upload-btn {
+	background: var(--lm-green);
+	color: white;
+	border: none;
+	padding: 14px 32px;
+	border-radius: 100px;
+	font-size: 1.1rem;
+	font-weight: 600;
+	cursor: pointer;
+	transition: all 0.2s;
+	width: 100%;
+	max-width: 280px;
+}
+
+.upload-btn:hover {
+	background: #5f9919;
+	transform: translateY(-2px);
+}
+
+.upload-note {
+	color: #999;
+	font-size: 0.8rem;
+	margin-top: 16px;
+}
+
+/* Drag over effect */
+.upload-area.drag-over {
+	border-color: var(--lm-green);
+	background: rgba(120, 190, 32, 0.05);
+}
+
+canvas {
+	width: 100% !important;
+	height: 250px !important;
+	background: #f9f9f9;
+	border-radius: 16px;
+}
