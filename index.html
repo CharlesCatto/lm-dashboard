@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LM Production Dashboard</title>  <script type="module" crossorigin src="/lm-dashboard/assets/index-TzuUoJBa.js"></script>
+  <link rel="stylesheet" crossorigin href="/lm-dashboard/assets/index-DOGQm6zl.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Header avec logo -->
+    <header class="header">
+      <img src="/lm-dashboard/assets/logo-lr-ukxmITKY.png" alt="LM" class="logo">
+      <h1>Production</h1>
+    </header>
+
+    <!-- Zone d'upload (visible par défaut) -->
+    <div id="uploadZone" class="upload-card">
+      <div class="upload-area" id="dropZone">
+        <div class="upload-icon">📋</div>
+        <h3>Coller vos cellules Excel</h3>
+        <p class="upload-hint">Ctrl+V ou glissez un fichier .xlsx</p>
+        <textarea id="pasteInput" placeholder="Ou collez ici..." rows="3"></textarea>
+        <button class="upload-btn" id="loadBtn">Charger les données</button>
+      </div>
+      <p class="upload-note">Format: Nom | Date | Production</p>
+    </div>
+
+    <!-- Dashboard (caché par défaut) -->
+    <div id="dashboard" class="dashboard-card" style="display: none;">
+      <div class="profile-row">
+        <div class="profile-info">
+          <span class="profile-name">Lucas Martin</span>
+          <span class="profile-role">Préparateur A27</span>
+        </div>
+        <div class="profile-avatar">
+          <div class="avatar">LM</div>
+        </div>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-label">Performance</span>
+          <span class="stat-value highlight" id="perfValue">112%</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Moyenne</span>
+          <span class="stat-value" id="moyValue">54.9</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Max</span>
+          <span class="stat-value" id="maxValue">61</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Min</span>
+          <span class="stat-value" id="minValue">47</span>
+        </div>
+      </div>
+
+      <div class="controls-row">
+        <div class="objective-badge" id="objectiveDisplay">
+          Objectif: <strong>49</strong>/h
+        </div>
+        <select class="period-select" id="periodSelect">
+          <option value="week">Semaine</option>
+          <option value="day">Jour</option>
+          <option value="month">Mois</option>
+        </select>
+      </div>
+
+      <div class="chart-container">
+        <canvas id="productionChart"></canvas>
+      </div>
+
+      <div class="week-grid" id="weekGrid">
+        <!-- Rempli par JS -->
+      </div>
+    </div>
+  </div>
+</body>
+</html>
