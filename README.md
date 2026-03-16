@@ -42,7 +42,6 @@ Ce projet est une **preuve de concept** pour montrer ce qu'on pourrait faire ave
 
 ## 📦 Installation en local
 
-```bash
 # Cloner le repo
 git clone https://github.com/CharlesCatto/lm-dashboard.git
 
@@ -54,3 +53,29 @@ npm install
 
 # Lancer en local
 npm run dev
+
+Puis ouvrir http://localhost:5173
+
+## 🧪 Tester la démo
+
+👉 **Lien direct** : [https://charlescatto.github.io/lm-dashboard/](https://charlescatto.github.io/lm-dashboard/)
+
+📱 **QR code** :  
+<img width="1000" height="1000" alt="image" src="https://github.com/user-attachments/assets/7983db38-d2e8-480e-ab78-f4dd3f917dca" />
+
+## 📝 Licence
+
+Ce projet est sous licence **MIT** – voir le fichier [LICENSE](LICENSE) pour plus de détails.
+
+**En clair, vous êtes libres de :**
+
+✅ Utiliser ce code commercialement  
+✅ Le modifier  
+✅ Le distribuer  
+✅ L'utiliser en privé  
+
+## 👤 À propos
+
+**Charles Catto** – Préparateur de commande intérimaire chez Leroy Merlin, passionné par le code et l'amélioration des outils du quotidien.
+
+*Projet personnel, non officiel – inspiré par l'équipe du secteur A27.*
